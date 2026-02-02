@@ -1,11 +1,7 @@
 import { Fragment } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 
-type PageSkeletonProps = {
-  rows?: number;
-};
-
-export function PageSkeleton({ rows = 6 }: PageSkeletonProps) {
+export function PageSkeleton() {
   return (
     <Fragment>
       <div className="grid auto-rows-min gap-4 md:grid-cols-3">

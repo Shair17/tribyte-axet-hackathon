@@ -34,7 +34,6 @@ import {
   UserPlus,
   UserX,
 } from "lucide-react";
-import React from "react";
 
 const employees = [
   {
