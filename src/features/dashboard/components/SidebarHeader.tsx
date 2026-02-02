@@ -3,7 +3,11 @@ import { Separator } from "@/components/ui/separator";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { Sparkles } from "lucide-react";
 
-export function SidebarHeader() {
+type Props = {
+  onOpenAIChat: () => void;
+};
+
+export function SidebarHeader({ onOpenAIChat }: Props) {
   // flex w-full h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12 top-0 sticky bg-background border-b border-border z-20
   return (
     <header className="flex h-(--header-height) shrink-0 items-center gap-2 border-b transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-(--header-height) bg-background rounded-t-xl sticky top-0">
@@ -15,7 +19,7 @@ export function SidebarHeader() {
         />
         {/* <h1 className="text-base font-medium">Documents</h1> */}
         <div className="ml-auto flex items-center gap-2">
-          <Button variant="default" size="sm">
+          <Button variant="default" size="sm" onClick={onOpenAIChat}>
             <Sparkles /> Asistente IA
           </Button>
         </div>
