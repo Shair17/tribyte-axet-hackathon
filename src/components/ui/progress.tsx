@@ -1,25 +1,18 @@
-import * as React from "react";
-import * as ProgressPrimitive from "@radix-ui/react-progress";
+import * as React from "react"
+import { Progress as ProgressPrimitive } from "radix-ui"
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
-/**
- * Progress
- * ----------
- * Componente basado en Radix UI.
- * `value` debe ir de 0 a 100.
- */
-const Progress = React.forwardRef<
-  React.ElementRef<typeof ProgressPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root> & {
-    value?: number;
-  }
->(({ className, value = 0, ...props }, ref) => {
+function Progress({
+  className,
+  value,
+  ...props
+}: React.ComponentProps<typeof ProgressPrimitive.Root>) {
   return (
     <ProgressPrimitive.Root
-      ref={ref}
+      data-slot="progress"
       className={cn(
-        "relative h-2 w-full overflow-hidden rounded-full bg-primary/20",
+        "bg-primary/20 relative h-2 w-full overflow-hidden rounded-full",
         className
       )}
       {...props}
